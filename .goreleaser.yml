@@ -20,7 +20,7 @@ archives:
             format: zip
 
 brews:
-    - name: my-cli
+    - name: spacer
       description: "A CLI app for cleaning up large files"
       homepage: "https://github.com/jerilseb/spacer"
       repository:
