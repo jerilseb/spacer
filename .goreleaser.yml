@@ -1,0 +1,31 @@
+version: 1
+
+before:
+    hooks:
+        - go mod tidy
+
+builds:
+    - binary: spacer
+      env:
+          - CGO_ENABLED=0
+      goos:
+          - linux
+          - windows
+          - darwin
+
+archives:
+    - format: tar.gz
+      format_overrides:
+          - goos: windows
+            format: zip
+
+brews:
+    - name: my-cli
+      description: "A CLI app for cleaning up large files"
+      homepage: "https://github.com/jerilseb/spacer"
+      repository:
+          owner: jerilseb
+          name: homebrew-tap
+      commit_author:
+          name: goreleaserbot
+          email: bot@goreleaser.com

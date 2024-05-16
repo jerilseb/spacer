@@ -1,6 +1,6 @@
 BINARY_NAME := spacer
 
-SOURCES := $(wildcard *.go)
+SOURCES := main.go
 
 build:
 	@go build -ldflags="-s -w" -trimpath -o $(BINARY_NAME) $(SOURCES)
